@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour {
                 break;
 
             case "center":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.zero, Time.deltaTime * 10.0f); // zentrierung des players bei nullposition des Analogsticks
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.zero, Time.deltaTime * 10.0f); // Zentrierung des players bei nullposition des Analogsticks
                 print("zentrieren!");
                 break;
 
