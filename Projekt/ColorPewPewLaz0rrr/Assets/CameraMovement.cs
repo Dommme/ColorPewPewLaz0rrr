@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
+
+    public float moveSmoothVar = 3.0f;
     Vector3 playerPos;
     // Use this for initialization
     void Start () {
@@ -18,7 +20,7 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
 
         playerPos = GameObject.Find("Player").GetComponent<PlayerController>().playerPos;
-        transform.position = Vector3.Lerp(transform.position, new Vector3( (playerPos[0] / 3.0f), (playerPos[1] / 3.0f), 3.5f), Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, new Vector3( (playerPos[0] / 3.0f), (playerPos[1] / 3.0f), 3.5f), Time.deltaTime * moveSmoothVar);
 
     }
 }

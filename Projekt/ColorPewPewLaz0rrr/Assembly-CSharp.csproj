@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraMovement.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/dome/Documents/GitHub/ColorPewPewlaz0rrr/Projekt/ColorPewPewLaz0rrr/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
