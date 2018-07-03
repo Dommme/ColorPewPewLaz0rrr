@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour {
     bool AxisR = false;
     bool AxisU = false;
     bool AxisD = false;
-    public float moveSmoothVar = 3.0f;
-    public Vector3 playerPos;
 
     public GameObject cube;
 
@@ -42,27 +40,18 @@ public class PlayerController : MonoBehaviour {
         */
         checkAxis();
 
-        playerPos = cube.transform.position;
-
 
     }
-
 
     void checkAxis() {
 
         // Variablen auf false setzen, um Position zu resetten (siehe movePlayer() )
 
-        /*
         AxisR = (Input.GetAxis("Horizontal") > 0.3) ? true : false;
         AxisL = (Input.GetAxis("Horizontal") < -0.3) ? true : false;
         AxisU = (Input.GetAxis("Vertical") > 0.3) ? true : false;
         AxisD = (Input.GetAxis("Vertical") < -0.3) ? true : false;
-        */
 
-        AxisR = (Input.GetAxis("Horizontal") > 0.3) ? true : false;
-        AxisL = (Input.GetAxis("Horizontal") < -0.3) ? true : false;
-        AxisU = (Input.GetAxis("Vertical") > 0.3) ? true : false;
-        AxisD = (Input.GetAxis("Vertical") < -0.3) ? true : false;
 
 
         // funktion abhängig von AxisInput aufrufen
@@ -124,47 +113,47 @@ public class PlayerController : MonoBehaviour {
 
         switch (dir) {
             case "U":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up, Time.deltaTime * moveSmoothVar); // u = up = hoch
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up, Time.deltaTime * 10.0f); // u = up = hoch
                 print("oben");
                 break;
 
             case "D":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down, Time.deltaTime * 10.0f); // d = down = du weißt schon und so weiter
                 print("unten");
                 break;
 
             case "L":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.right, Time.deltaTime * moveSmoothVar); // blabla
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.right, Time.deltaTime * 10.0f); // blabla
                 print("links");
                 break;
 
             case "R":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.left, Time.deltaTime * moveSmoothVar); // blubbblubb
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.left, Time.deltaTime * 10.0f); // blubbblubb
                 print("rechts");
                 break;
 
             case "UL":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.right, Time.deltaTime * 10.0f); // <-- keine Ahnung warum Vector3.right statt .left
                 print("obenlinks");
                 break;
 
             case "UR":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.left, Time.deltaTime * 10.0f); // <-- keine Ahnung warum Vector3.left statt .right
                 print("obenrechts");
                 break;
 
             case "DL":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.right, Time.deltaTime * 10.0f); // <-- keine Ahnung warum Vector3.right statt .left
                 print("untenlinks");
                 break;
 
             case "DR":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.left, Time.deltaTime * 10.0f); // <-- keine Ahnung warum Vector3.left statt .right
                 print("untenrechts");
                 break;
 
             case "center":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.zero, Time.deltaTime * moveSmoothVar); // Zentrierung des players bei nullposition des Analogsticks
+                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.zero, Time.deltaTime * 10.0f); // Zentrierung des players bei nullposition des Analogsticks
                 print("zentrieren!");
                 break;
 
