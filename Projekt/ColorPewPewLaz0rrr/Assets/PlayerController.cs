@@ -34,12 +34,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         checkKey();
-        /*
-        AxisR = false;
-        AxisL = false;
-        AxisU = false; 
-        AxisD = false;
-        */
+
         checkAxis();
 
         playerPos = cube.transform.position;
@@ -50,14 +45,8 @@ public class PlayerController : MonoBehaviour {
 
     void checkAxis() {
 
-        // Variablen auf false setzen, um Position zu resetten (siehe movePlayer() )
+        // Variablen auf false / true setzen, um eventuell Position zu resetten (siehe movePlayer() )
 
-        /*
-        AxisR = (Input.GetAxis("Horizontal") > 0.3) ? true : false;
-        AxisL = (Input.GetAxis("Horizontal") < -0.3) ? true : false;
-        AxisU = (Input.GetAxis("Vertical") > 0.3) ? true : false;
-        AxisD = (Input.GetAxis("Vertical") < -0.3) ? true : false;
-        */
 
         AxisR = (Input.GetAxis("Horizontal") > 0.3) ? true : false;
         AxisL = (Input.GetAxis("Horizontal") < -0.3) ? true : false;
@@ -66,11 +55,14 @@ public class PlayerController : MonoBehaviour {
 
 
         // funktion abhängig von AxisInput aufrufen
-
+        //// Zentrieren
         if (!(AxisR || AxisL || AxisU || AxisD)) {
             if (cube.transform.position != Vector3.zero) {
                 movePlayer("center");
             }
+
+
+        //// Alle 8 Richtungen
         } else if (AxisU && AxisR) {
             movePlayer("UR");
         } else if (AxisU && AxisL) {
