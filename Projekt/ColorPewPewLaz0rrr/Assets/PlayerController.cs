@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     float timer = 0;
-    bool AxisL = false;
-    bool AxisR = false;
-    bool AxisU = false;
-    bool AxisD = false;
+    public bool AxisL = false;
+    public bool AxisR = false;
+    public bool AxisU = false;
+    public bool AxisD = false;
+
     public float moveSmoothVar = 3.0f;
     public Vector3 playerPos;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
         cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cube.GetComponent<Renderer>().material.color = new Color(0.3f, 0.7f, 0.1f);
+        cube.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
     }
 
@@ -33,10 +35,13 @@ public class PlayerController : MonoBehaviour {
             timer = 0;
         }
 
+        // Buttons Prüfen
         checkKey();
 
+        // Analog-Stick Prüfen
         checkAxis();
 
+        // PlayPos Aktualisieren für Übergabe an Kamera
         playerPos = cube.transform.position;
 
 
@@ -120,7 +125,7 @@ public class PlayerController : MonoBehaviour {
                 print("oben");
                 break;
 
-            case "D":
+            case "D": 
                 cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
                 print("unten");
                 break;
