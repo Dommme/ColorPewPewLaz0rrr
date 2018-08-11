@@ -8,6 +8,7 @@ public class MeteorSpawner : MonoBehaviour
     public Vector3 spawnValues;
     public float spawnDelay;
     public float startDelay;
+    public bool useGrid = false;
 
     void Start()
     {
@@ -23,7 +24,15 @@ public class MeteorSpawner : MonoBehaviour
         // TODO: Loop condition hinzufügen!
         while (true) {
             //Spawnbereich
-            Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+            Vector3 spawnPosition;
+            if (useGrid)
+            { //benutze Gridpositionen für Meteoren
+                spawnPosition = new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), spawnValues.z);
+            }
+            else
+            { //komplett zufällige Positionen für Meteoren
+                spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+            }
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(meteor, spawnPosition, spawnRotation);
             //Wartezeit zwischen Spawns

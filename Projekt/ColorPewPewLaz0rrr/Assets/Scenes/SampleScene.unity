@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 1518992230}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,3 +355,4 @@ MonoBehaviour:
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 1
   startDelay: 2
+  useGrid: 0
