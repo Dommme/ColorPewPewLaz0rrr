@@ -8,11 +8,9 @@ public class CameraMovement : MonoBehaviour {
     public float moveSmoothVar = 3.0f;
     Vector3 playerPos;
     // Use this for initialization
+
     void Start () {
 
-        
-
-        
 
     }
 	

@@ -352,7 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteor: {fileID: 1804381995741858, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
+  asteroid: {fileID: 1401621254580536, guid: 10bd8a0591bef9747b5264e939c0f2ef, type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
-  spawnDelay: 1
+  spawnDelay: 0.25
   startDelay: 2
-  useGrid: 0
+  useGrid: 1
+  asteroidenDichte: 0
