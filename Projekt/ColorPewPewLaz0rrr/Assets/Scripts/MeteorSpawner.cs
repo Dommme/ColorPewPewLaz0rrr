@@ -5,12 +5,12 @@ using UnityEngine;
 public class MeteorSpawner : MonoBehaviour
 {
     public GameObject meteor;
-    public GameObject asteroid; // von Dome
+    //public GameObject asteroid; // von Dome
     public Vector3 spawnValues;
     public float spawnDelay;
     public float startDelay;
     public bool useGrid = true;
-    public int asteroidenDichte = 15; // von Dome
+    //public int asteroidenDichte = 15; // von Dome
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class MeteorSpawner : MonoBehaviour
             
             
             
-            
+            /*
             /// AB HIER DOME ///
             // Umgebungs Asteroide spawnen
             for (int i = 0; i < asteroidenDichte; i++)
@@ -51,6 +51,7 @@ public class MeteorSpawner : MonoBehaviour
                 Instantiate(asteroid, asteroidPos, spawnRotation);
             }
             /// BIS HIER DOME ///
+            */
 
             //Wartezeit zwischen Spawns
             yield return new WaitForSeconds(spawnDelay);

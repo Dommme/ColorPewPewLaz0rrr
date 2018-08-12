@@ -13,14 +13,16 @@ public class PlayerController : MonoBehaviour {
     public float moveSmoothVar = 3.0f;
     public Vector3 playerPos;
 
-    public GameObject cube;
+    public GameObject shuttle;
 
     // Use this for initialization
     void Start() {
 
-        cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.GetComponent<Renderer>().material.color = new Color(0.3f, 0.7f, 0.1f);
-        cube.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        shuttle = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        shuttle.GetComponent<Renderer>().material.color = new Color(0.3f, 0.7f, 0.1f);
+        shuttle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        //Instantiate(shuttle);
 
     }
 
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour {
         checkAxis();
 
         // PlayPos Aktualisieren für Übergabe an Kamera
-        playerPos = cube.transform.position;
+        playerPos = shuttle.transform.position;
 
 
     }
@@ -62,7 +64,7 @@ public class PlayerController : MonoBehaviour {
         // funktion abhängig von AxisInput aufrufen
         //// Zentrieren
         if (!(AxisR || AxisL || AxisU || AxisD)) {
-            if (cube.transform.position != Vector3.zero) {
+            if (shuttle.transform.position != Vector3.zero) {
                 movePlayer("center");
             }
 
@@ -121,47 +123,47 @@ public class PlayerController : MonoBehaviour {
 
         switch (dir) {
             case "U":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up, Time.deltaTime * moveSmoothVar); // u = up = hoch
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up, Time.deltaTime * moveSmoothVar); // u = up = hoch
                 print("oben");
                 break;
 
             case "D": 
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
                 print("unten");
                 break;
 
             case "L":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.right, Time.deltaTime * moveSmoothVar); // blabla
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.right, Time.deltaTime * moveSmoothVar); // blabla
                 print("links");
                 break;
 
             case "R":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.left, Time.deltaTime * moveSmoothVar); // blubbblubb
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.left, Time.deltaTime * moveSmoothVar); // blubbblubb
                 print("rechts");
                 break;
 
             case "UL":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
                 print("obenlinks");
                 break;
 
             case "UR":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.up + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
                 print("obenrechts");
                 break;
 
             case "DL":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
                 print("untenlinks");
                 break;
 
             case "DR":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.down + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
                 print("untenrechts");
                 break;
 
             case "center":
-                cube.transform.position = Vector3.Lerp(cube.transform.position, Vector3.zero, Time.deltaTime * moveSmoothVar); // Zentrierung des players bei nullposition des Analogsticks
+                shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.zero, Time.deltaTime * moveSmoothVar); // Zentrierung des players bei nullposition des Analogsticks
                 print("zentrieren!");
                 break;
 

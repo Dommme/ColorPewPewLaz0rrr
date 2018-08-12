@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 282840813}
   - component: {fileID: 282840811}
   - component: {fileID: 282840812}
+  - component: {fileID: 282840815}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -224,7 +225,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.05139728, g: 0.05709078, b: 0.066037714, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -236,7 +237,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -247,7 +248,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 1
+  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -264,6 +265,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!45 &282840815
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: c7ba968ad73483f47a8b6d4a1f145705, type: 2}
 --- !u!1 &1518992229
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1518992231}
   - component: {fileID: 1518992230}
+  - component: {fileID: 1518992232}
+  - component: {fileID: 1518992233}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,7 +308,7 @@ MonoBehaviour:
   AxisD: 0
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
-  cube: {fileID: 0}
+  shuttle: {fileID: 1280949779688320, guid: 75b46db25647d9e4b820ae05f5def91f, type: 2}
 --- !u!4 &1518992231
 Transform:
   m_ObjectHideFlags: 0
@@ -306,11 +317,33 @@ Transform:
   m_GameObject: {fileID: 1518992229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1518992232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518992229}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!33 &1518992233
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518992229}
+  m_Mesh: {fileID: 4300000, guid: 88a4a9c1b0788fa4aa99408b069ccb14, type: 3}
 --- !u!1 &1816723145
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816723149}
   - component: {fileID: 1816723150}
+  - component: {fileID: 1816723146}
   m_Layer: 0
   m_Name: MeteorSpawner
   m_TagString: Untagged
@@ -327,6 +361,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1816723146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816723145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e8e3648f9b9994bb1f0f9acdd82fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 1401621254580536, guid: 10bd8a0591bef9747b5264e939c0f2ef, type: 2}
+  spawnValues: {x: 1, y: 1, z: -35}
+  spawnDelay: 0
+  asteroidenDichte: 11
 --- !u!4 &1816723149
 Transform:
   m_ObjectHideFlags: 0
@@ -351,10 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cf4ef3d3d16db438e919a843d78e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteor: {fileID: 1804381995741858, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
-  asteroid: {fileID: 1401621254580536, guid: 10bd8a0591bef9747b5264e939c0f2ef, type: 2}
+  meteor: {fileID: 1224569698217202, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 0.25
   startDelay: 2
   useGrid: 1
-  asteroidenDichte: 0
