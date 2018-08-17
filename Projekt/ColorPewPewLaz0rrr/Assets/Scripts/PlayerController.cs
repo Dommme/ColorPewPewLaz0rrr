@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour {
 
@@ -14,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     public Vector3 playerPos;
 
     public GameObject shuttle;
+
+
 
     // Use this for initialization
     void Start() {
@@ -33,7 +37,7 @@ public class PlayerController : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer > 1.0f) {
 
-
+            FindObjectOfType<UIscript>().Score();
             timer = 0;
         }
 
@@ -94,27 +98,36 @@ public class PlayerController : MonoBehaviour {
 
     void checkKey() {
 
-        // Gamepad Buttons
+        // Buttons (sowohl Tastatur als auch GamePad
 
-        if (Input.GetKeyDown("joystick button 0")) {
+        if (Input.GetButton("GreenButton"))
+        {
             // code hierher
             Debug.Log("Fire!"); // grüner button
+            FindObjectOfType<UIscript>().Life();
         }
 
-        if (Input.GetKeyDown("joystick button 1")) {
+        if (Input.GetButton("RedButton"))
+        {
             // code hierher
             Debug.Log("Red");
+            FindObjectOfType<UIscript>().SelectRed();
         }
 
-        if (Input.GetKeyDown("joystick button 2")) {
+        if (Input.GetButton("BlueButton"))
+        {
             // code hierher
             Debug.Log("Blue");
+            FindObjectOfType<UIscript>().SelectBlue();
         }
 
-        if (Input.GetKeyDown("joystick button 3")) {
+        if (Input.GetButton("YellowButton"))
+        {
             // code hierher
             Debug.Log("Yellow");
+            FindObjectOfType<UIscript>().SelectYellow();
         }
+
     }
 
     void movePlayer(string dir) {
