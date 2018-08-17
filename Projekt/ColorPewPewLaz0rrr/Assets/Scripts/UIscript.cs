@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class UIscript : MonoBehaviour {
 
+    
+
 public RawImage[] UIColors;
     public Text ScoreText;
     public Text LifeText;
  
-    private int countScore=0;
-    private int countLife=3;
+    private int countScore = 0;
+    public int countLife = 100;
 	void Start () {
 
         UIColors[0].enabled=true;  //White
@@ -20,7 +22,6 @@ public RawImage[] UIColors;
         UIColors[2].enabled=false; //Green
         UIColors[3].enabled=false; //Blue
         UIColors[4].enabled=false; //Yellow
-
 	}
 	
    public void SelectRed(){
@@ -48,17 +49,20 @@ public RawImage[] UIColors;
     // Update is called once per frame
 	void Update () {
 	}
+
     public void Score(){
         ScoreText.text= countScore.ToString();
         countScore++;
         
     }
+
     public void Life(){
         LifeText.text= countLife.ToString();
         countLife--;
+        Debug.Log(countLife + "Leben übrig");
         if(countLife==0){
             Debug.Log("GameOver!");
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
             
             
         }

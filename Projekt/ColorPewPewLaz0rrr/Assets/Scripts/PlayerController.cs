@@ -98,30 +98,36 @@ public class PlayerController : MonoBehaviour {
 
     void checkKey() {
 
-        // Gamepad Buttons
+        // Buttons (sowohl Tastatur als auch GamePad
 
-        if (Input.GetKeyDown("joystick button 0")) {
+        if (Input.GetButton("GreenButton"))
+        {
             // code hierher
             Debug.Log("Fire!"); // grüner button
+            FindObjectOfType<UIscript>().Life();
         }
 
-        if (Input.GetKeyDown("joystick button 1")) {
+        if (Input.GetButton("RedButton"))
+        {
             // code hierher
             Debug.Log("Red");
             FindObjectOfType<UIscript>().SelectRed();
         }
 
-        if (Input.GetKeyDown("joystick button 2")) {
+        if (Input.GetButton("BlueButton"))
+        {
             // code hierher
             Debug.Log("Blue");
             FindObjectOfType<UIscript>().SelectBlue();
         }
 
-        if (Input.GetKeyDown("joystick button 3")) {
+        if (Input.GetButton("YellowButton"))
+        {
             // code hierher
             Debug.Log("Yellow");
             FindObjectOfType<UIscript>().SelectYellow();
         }
+
     }
 
     void movePlayer(string dir) {
@@ -132,19 +138,16 @@ public class PlayerController : MonoBehaviour {
             case "U":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up, Time.deltaTime * moveSmoothVar); // u = up = hoch
                 print("oben");
-                FindObjectOfType<UIscript>().SelectRed();   //ZU TESTZWECKEN; Färbt Interface Rot
                 break;
 
             case "D": 
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
                 print("unten");
-                FindObjectOfType<UIscript>().SelectBlue();   //ZU TESTZWECKEN; Färbt Interface Blau
                 break;
 
             case "L":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.right, Time.deltaTime * moveSmoothVar); // blabla
                 print("links");
-                FindObjectOfType<UIscript>().SelectYellow();   //ZU TESTZWECKEN; Färbt Interface Gelb
                 break;
 
             case "R":
@@ -170,8 +173,6 @@ public class PlayerController : MonoBehaviour {
             case "DR":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
                 print("untenrechts");
-                FindObjectOfType<UIscript>().Life();    //ZU TESTZWECKEN; Zählt Leben runter
-
                 break;
 
             case "center":

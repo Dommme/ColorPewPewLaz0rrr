@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -27.6, y: 24.1}
+  m_AnchoredPosition: {x: -27.599976, y: 24.100006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1232253761
@@ -701,6 +701,7 @@ MonoBehaviour:
   - {fileID: 1232253763}
   ScoreText: {fileID: 1750596867}
   LifeText: {fileID: 1132006163}
+  countLife: 3
 --- !u!1 &1696802822
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +822,7 @@ MonoBehaviour:
   - {fileID: 1232253763}
   ScoreText: {fileID: 1750596867}
   LifeText: {fileID: 1132006163}
+  countLife: 100
 --- !u!1 &1742847910
 GameObject:
   m_ObjectHideFlags: 0
