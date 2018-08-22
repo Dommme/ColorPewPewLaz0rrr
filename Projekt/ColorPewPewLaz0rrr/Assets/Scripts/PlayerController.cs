@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     public Vector3 playerPos;
 
     public GameObject shuttle;
-
+    public GameObject prefabProjectile;
 
 
     // Use this for initialization
@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour {
         shuttle = GameObject.CreatePrimitive(PrimitiveType.Cube);
         shuttle.GetComponent<Renderer>().material.color = new Color(0.3f, 0.7f, 0.1f);
         shuttle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
+        //Drehe den Spieler in die richtige Richtung
+        shuttle.transform.Rotate(new Vector3(0, 180, 0));
         //Instantiate(shuttle);
 
+        //Lade das Projektil
+        prefabProjectile = Resources.Load("projectile") as GameObject;
     }
 
     // Update is called once per frame
@@ -100,11 +103,21 @@ public class PlayerController : MonoBehaviour {
 
         // Buttons (sowohl Tastatur als auch GamePad
 
-        if (Input.GetButton("GreenButton"))
+        if (Input.GetKeyDown("j"))
         {
-            // code hierher
+
             Debug.Log("Fire!"); // grüner button
-            FindObjectOfType<UIscript>().Life();
+
+            //Wenn geschossen wurde, wird ein neues Projektil instanziert und direkt vor dem Spieler positioniert
+            GameObject projectile = Instantiate(prefabProjectile) as GameObject;
+            projectile.transform.position = shuttle.transform.position + shuttle.transform.forward;
+
+            //Danach wird ihm eine Geschwindigkeit und Richtung zugewiesen. Die Geschwindigkeit findet sich im Skript "ProjectileHandler" und lässt
+            //sich auch über das Unity Interface direkt steuern
+            Rigidbody pphysics = projectile.GetComponent<Rigidbody>();
+            pphysics.velocity = shuttle.transform.forward * projectile.GetComponent<ProjectileHandler>().velocityFactor;
+
+            
         }
 
         if (Input.GetButton("RedButton"))
