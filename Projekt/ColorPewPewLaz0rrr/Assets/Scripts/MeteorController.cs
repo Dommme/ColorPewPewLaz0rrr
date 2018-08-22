@@ -6,6 +6,7 @@ public class MeteorController : MonoBehaviour {
 
     public float speed;
     public float tumble;
+    public string colour;
 
     void Start () {
         Rigidbody rb = GetComponent<Rigidbody>();

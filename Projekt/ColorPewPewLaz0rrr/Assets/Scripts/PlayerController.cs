@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour {
         //Drehe den Spieler in die richtige Richtung
         shuttle.transform.Rotate(new Vector3(0, 180, 0));
         //Instantiate(shuttle);
-
-        //Lade das Projektil
-        prefabProjectile = Resources.Load("projectile") as GameObject;
     }
 
     // Update is called once per frame
