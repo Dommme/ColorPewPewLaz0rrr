@@ -46,7 +46,6 @@ public class MeteorSpawner : MonoBehaviour
                 case 2: Instantiate(meteorYellow, spawnPosition, spawnRotation);
                     break;
             }
-            //Instantiate(meteorRed, spawnPosition, spawnRotation);
 
             //Wartezeit zwischen Spawns
             yield return new WaitForSeconds(spawnDelay);
