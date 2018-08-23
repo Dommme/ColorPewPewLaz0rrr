@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour {
     public Vector3 playerPos;
 
     public GameObject shuttle;
-    public GameObject prefabProjectile;
+    public GameObject blankProjectile;
+    public GameObject blueProjectile;
+    public GameObject redProjectile;
+    public GameObject yellowProjectile;
 
-
+    string color = "blank";
     // Use this for initialization
     void Start() {
 
@@ -102,38 +105,39 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown("j"))
         {
+            Debug.Log("Fire " +color+"!"); // shoot-Button
 
-            Debug.Log("Fire!"); // grüner button
+            //Instanziere das ausgewählte Projektil
+            GameObject lazor = ladeLazor();
+            //platziere das Projektil direkt vor dem Spieler
+            lazor.transform.position = shuttle.transform.position + shuttle.transform.forward;
 
-            //Wenn geschossen wurde, wird ein neues Projektil instanziert und direkt vor dem Spieler positioniert
-            GameObject projectile = Instantiate(prefabProjectile) as GameObject;
-            projectile.transform.position = shuttle.transform.position + shuttle.transform.forward;
-
-            //Danach wird ihm eine Geschwindigkeit und Richtung zugewiesen. Die Geschwindigkeit findet sich im Skript "ProjectileHandler" und lässt
-            //sich auch über das Unity Interface direkt steuern
-            Rigidbody pphysics = projectile.GetComponent<Rigidbody>();
-            pphysics.velocity = shuttle.transform.forward * projectile.GetComponent<ProjectileHandler>().velocityFactor;
-
-            
+            //Danach wird eine Geschwindigkeit und Richtung zugewiesen. Die Geschwindigkeit findet sich im Skript "ProjectileHandler" und lässt
+            //sich auch über das Unity Interface direkt steuern. Die Variable heißt "velocityFactor"
+            Rigidbody pphysics = lazor.GetComponent<Rigidbody>();
+            pphysics.velocity = shuttle.transform.forward * lazor.GetComponent<ProjectileHandler>().velocityFactor;
         }
 
-        if (Input.GetButton("RedButton"))
+        if (Input.GetKeyDown("k"))
         {
-            // code hierher
+            //Die Farbauswahl wird auf "red" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
+            color = "red";
             Debug.Log("Red");
             FindObjectOfType<UIscript>().SelectRed();
         }
 
-        if (Input.GetButton("BlueButton"))
+        if (Input.GetKeyDown("l"))
         {
-            // code hierher
+            //Die Farbauswahl wird auf "blue" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
+            color = "blue";
             Debug.Log("Blue");
             FindObjectOfType<UIscript>().SelectBlue();
         }
 
-        if (Input.GetButton("YellowButton"))
+        if (Input.GetKeyDown("i"))
         {
-            // code hierher
+            //Die Farbauswahl wird auf "yellow" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
+            color = "yellow";
             Debug.Log("Yellow");
             FindObjectOfType<UIscript>().SelectYellow();
         }
@@ -187,7 +191,7 @@ public class PlayerController : MonoBehaviour {
 
             case "center":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.zero, Time.deltaTime * moveSmoothVar); // Zentrierung des players bei nullposition des Analogsticks
-                print("zentrieren!");
+                //print("zentrieren!");
                 break;
 
             default:
@@ -196,4 +200,36 @@ public class PlayerController : MonoBehaviour {
 
     }
 
+    //Diese Methode instanziert das Projektil und gibt es zurück, damit es abgefeuert werden kann. Dadurch wird redundanter Code eingespart.
+    private GameObject ladeLazor ()
+    {
+        GameObject projectile;
+        if (color == "blank")
+        {
+            projectile = Instantiate(blankProjectile) as GameObject;
+            return projectile;
+        }
+
+        if (color == "red")
+        {
+            projectile = Instantiate(redProjectile) as GameObject;
+            return projectile;
+        }
+
+        if (color == "blue")
+        {
+            projectile = Instantiate(blueProjectile) as GameObject;
+            return projectile;
+        }
+
+        if (color == "yellow")
+        {
+            projectile = Instantiate(yellowProjectile) as GameObject;
+            return projectile;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

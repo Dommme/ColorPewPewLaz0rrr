@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44950616, g: 0.49957734, b: 0.575681, a: 1}
+  m_IndirectSpecularColor: {r: 0.44950557, g: 0.4995765, b: 0.57568043, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -715,7 +715,13 @@ MonoBehaviour:
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
   shuttle: {fileID: 1280949779688320, guid: 75b46db25647d9e4b820ae05f5def91f, type: 2}
-  prefabProjectile: {fileID: 1962884761847804, guid: 08f8ce0b164b4084686ee8a5af1dac8c,
+  blankProjectile: {fileID: 1962884761847804, guid: 08f8ce0b164b4084686ee8a5af1dac8c,
+    type: 2}
+  blueProjectile: {fileID: 1962884761847804, guid: a487601e3f2a34b46aeac22326aa6ee3,
+    type: 2}
+  redProjectile: {fileID: 1962884761847804, guid: eca24c794fff0654da904f35a56f1a84,
+    type: 2}
+  yellowProjectile: {fileID: 1962884761847804, guid: 8b23fab2f42caa64786f829b3f4a11eb,
     type: 2}
 --- !u!4 &1518992231
 Transform:
