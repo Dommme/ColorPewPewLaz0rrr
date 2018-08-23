@@ -715,8 +715,6 @@ MonoBehaviour:
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
   shuttle: {fileID: 1280949779688320, guid: 75b46db25647d9e4b820ae05f5def91f, type: 2}
-  blankProjectile: {fileID: 1962884761847804, guid: 08f8ce0b164b4084686ee8a5af1dac8c,
-    type: 2}
   blueProjectile: {fileID: 1962884761847804, guid: a487601e3f2a34b46aeac22326aa6ee3,
     type: 2}
   redProjectile: {fileID: 1962884761847804, guid: eca24c794fff0654da904f35a56f1a84,
@@ -1158,7 +1156,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 72e2c670b2f9d489f8bf1ee1fef3703f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 75c72f5f25850467289e0774d0de0c5d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

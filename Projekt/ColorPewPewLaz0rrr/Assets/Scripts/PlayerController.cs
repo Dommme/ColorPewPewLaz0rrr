@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour {
     public Vector3 playerPos;
 
     public GameObject shuttle;
-    public GameObject blankProjectile;
+
     public GameObject blueProjectile;
     public GameObject redProjectile;
     public GameObject yellowProjectile;
 
-    string color = "blank";
+    string color = "red";
     // Use this for initialization
     void Start() {
 
@@ -204,11 +204,6 @@ public class PlayerController : MonoBehaviour {
     private GameObject ladeLazor ()
     {
         GameObject projectile;
-        if (color == "blank")
-        {
-            projectile = Instantiate(blankProjectile) as GameObject;
-            return projectile;
-        }
 
         if (color == "red")
         {
