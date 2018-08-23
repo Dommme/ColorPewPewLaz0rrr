@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour {
 
         // Buttons (sowohl Tastatur als auch GamePad
 
-        if (Input.GetKeyDown("j"))
+        if (Input.GetButton("GreenButton"))
         {
             Debug.Log("Fire " +color+"!"); // shoot-Button
 
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour {
             pphysics.velocity = shuttle.transform.forward * lazor.GetComponent<ProjectileHandler>().velocityFactor;
         }
 
-        if (Input.GetKeyDown("k"))
+        if (Input.GetButton("RedButton"))
         {
             //Die Farbauswahl wird auf "red" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
             color = "red";
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour {
             FindObjectOfType<UIscript>().SelectRed();
         }
 
-        if (Input.GetKeyDown("l"))
+        if (Input.GetButton("BlueButton"))
         {
             //Die Farbauswahl wird auf "blue" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
             color = "blue";
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour {
             FindObjectOfType<UIscript>().SelectBlue();
         }
 
-        if (Input.GetKeyDown("i"))
+        if (Input.GetButton("YellowButton"))
         {
             //Die Farbauswahl wird auf "yellow" geändert, damit das die Methode ladeLazor() weiß, welches prefab instanziert werden muss
             color = "yellow";
