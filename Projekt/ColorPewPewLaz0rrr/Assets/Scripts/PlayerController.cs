@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour {
 
             //Instanziere das ausgewählte Projektil
             GameObject lazor = ladeLazor();
+
             //platziere das Projektil direkt vor dem Spieler
             lazor.transform.position = shuttle.transform.position + shuttle.transform.forward;
 
@@ -151,42 +152,42 @@ public class PlayerController : MonoBehaviour {
         switch (dir) {
             case "U":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up, Time.deltaTime * moveSmoothVar); // u = up = hoch
-                print("oben");
+              //  print("oben");
                 break;
 
             case "D": 
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down, Time.deltaTime * moveSmoothVar); // d = down = du weißt schon und so weiter
-                print("unten");
+               // print("unten");
                 break;
 
             case "L":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.right, Time.deltaTime * moveSmoothVar); // blabla
-                print("links");
+               // print("links");
                 break;
 
             case "R":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.left, Time.deltaTime * moveSmoothVar); // blubbblubb
-                print("rechts");
+              //  print("rechts");
                 break;
 
             case "UL":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
-                print("obenlinks");
+               // print("obenlinks");
                 break;
 
             case "UR":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.up + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
-                print("obenrechts");
+              //  print("obenrechts");
                 break;
 
             case "DL":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down + Vector3.right, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.right statt .left
-                print("untenlinks");
+                //print("untenlinks");
                 break;
 
             case "DR":
                 shuttle.transform.position = Vector3.Lerp(shuttle.transform.position, Vector3.down + Vector3.left, Time.deltaTime * moveSmoothVar); // <-- keine Ahnung warum Vector3.left statt .right
-                print("untenrechts");
+               // print("untenrechts");
                 break;
 
             case "center":

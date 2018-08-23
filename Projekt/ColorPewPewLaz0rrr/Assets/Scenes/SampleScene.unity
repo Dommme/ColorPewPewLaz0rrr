@@ -1048,6 +1048,7 @@ GameObject:
   - component: {fileID: 1816723149}
   - component: {fileID: 1816723150}
   - component: {fileID: 1816723146}
+  - component: {fileID: 1816723147}
   m_Layer: 0
   m_Name: MeteorSpawner
   m_TagString: Untagged
@@ -1070,6 +1071,18 @@ MonoBehaviour:
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 0
   asteroidenDichte: 1
+--- !u!65 &1816723147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816723145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 0.1, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1816723149
 Transform:
   m_ObjectHideFlags: 0
