@@ -715,7 +715,9 @@ MonoBehaviour:
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
   cooledDown: 0
-  shuttle: {fileID: 1280949779688320, guid: 75b46db25647d9e4b820ae05f5def91f, type: 2}
+  shuttlePrefab: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c,
+    type: 2}
+  shuttle: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c, type: 2}
   blueProjectile: {fileID: 1962884761847804, guid: a487601e3f2a34b46aeac22326aa6ee3,
     type: 2}
   redProjectile: {fileID: 1962884761847804, guid: eca24c794fff0654da904f35a56f1a84,
@@ -1111,8 +1113,6 @@ MonoBehaviour:
   meteorBlue: {fileID: 1224569698217202, guid: df528939bb28cfa4daec9b56545f5432, type: 2}
   meteorRed: {fileID: 1224569698217202, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
   meteorYellow: {fileID: 1224569698217202, guid: 7779a0f0815abb94396d7b4c34eda7d5,
-    type: 2}
-  meteorGreen: {fileID: 1633693499344304, guid: 5e52b87a6a0727f46a89e8b14aa386dd,
     type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 1
