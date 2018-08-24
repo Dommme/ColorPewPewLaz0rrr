@@ -1,21 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1224569698217202}
-  m_IsPrefabParent: 1
 --- !u!1 &1224569698217202
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4306142173518064}
@@ -35,7 +24,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3045988, y: 0.7169485, z: -12.658134}
@@ -48,7 +37,7 @@ Transform:
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
   m_Enabled: 1
   m_CastShadows: 1
@@ -83,14 +72,14 @@ MeshRenderer:
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
-  m_Mesh: {fileID: 4300000, guid: 7977034a79d1efe4fb2cd64514a5be7d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: dd5c11483be6aec4a953d055c64b1ba2, type: 3}
 --- !u!54 &54437834683249792
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
   serializedVersion: 2
   m_Mass: 1
@@ -105,7 +94,7 @@ Rigidbody:
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -119,7 +108,7 @@ MonoBehaviour:
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224569698217202}
   m_Material: {fileID: 0}
   m_IsTrigger: 1

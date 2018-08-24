@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44950557, g: 0.4995765, b: 0.57568043, a: 1}
+  m_IndirectSpecularColor: {r: 0.44950616, g: 0.49957734, b: 0.575681, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -714,6 +714,7 @@ MonoBehaviour:
   AxisD: 0
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
+  cooledDown: 0
   shuttle: {fileID: 1280949779688320, guid: 75b46db25647d9e4b820ae05f5def91f, type: 2}
   blueProjectile: {fileID: 1962884761847804, guid: a487601e3f2a34b46aeac22326aa6ee3,
     type: 2}
@@ -1111,8 +1112,10 @@ MonoBehaviour:
   meteorRed: {fileID: 1224569698217202, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
   meteorYellow: {fileID: 1224569698217202, guid: 7779a0f0815abb94396d7b4c34eda7d5,
     type: 2}
+  meteorGreen: {fileID: 1633693499344304, guid: 5e52b87a6a0727f46a89e8b14aa386dd,
+    type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
-  spawnDelay: 0.5
+  spawnDelay: 1
   startDelay: 2
   useGrid: 1
 --- !u!1 &2068318977

@@ -39,11 +39,16 @@ public class MeteorSpawner : MonoBehaviour
 
             switch (Random.Range(0, 3))
             {
-                case 0: Instantiate(meteorBlue, spawnPosition, spawnRotation);
+                case 0:
+                    Instantiate(meteorBlue, spawnPosition, spawnRotation);
                     break;
-                case 1: Instantiate(meteorRed, spawnPosition, spawnRotation);
+
+                case 1:
+                    Instantiate(meteorRed, spawnPosition, spawnRotation);
                     break;
-                case 2: Instantiate(meteorYellow, spawnPosition, spawnRotation);
+
+                case 2:
+                    Instantiate(meteorYellow, spawnPosition, spawnRotation);
                     break;
             }
 
