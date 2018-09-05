@@ -129,16 +129,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
-<<<<<<< HEAD
-    void checkKey() {
-        
-
-
-        // Buttons (sowohl Tastatur als auch GamePad
-=======
     void checkKey()
     {
->>>>>>> ce76bc64d43aee110d09783e075b52206777516a
 
                                                                                     // Buttons (sowohl Tastatur als auch GamePad
                                                                                     ////////////////////////////////////////////
