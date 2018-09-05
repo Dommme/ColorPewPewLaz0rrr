@@ -5,26 +5,31 @@ using UnityEngine;
 public class ProjectileHandler : MonoBehaviour {
 
     public string color;
-    public int velocityFactor;
-	// Use this for initialization
-	void Start () {
-        color = "green";
-        velocityFactor = 40;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //diese Variable ändern, wenn das Projektil die Geschwindigkeit ändern soll
+    public int velocityFactor = 40;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Meteor(Clone)")
+        //Prüfe ob der MeteorSpawner getroffen wurde
+        if(other.gameObject.name == "MeteorSpawner")
         {
-            Destroy(other.gameObject);
+            //wenn ja, dann zerstöre das Projektil, damit es nicht unendlich lange rumfliegt
             Destroy(gameObject);
-            Debug.Log(other.gameObject.name);
+        }
+        //Wenn etwas anderes getroffen wurde
+        else
+        {
+            //überprüfe die Farbstrings der beiden kollidierenden Objekten und zerstöre sie wenn sie stimmen
+            if (other.GetComponent<MeteorController>().color == gameObject.GetComponent<ProjectileHandler>().color)
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
+            //ansonsten zerstöre nur das Projektil
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
-
 }
