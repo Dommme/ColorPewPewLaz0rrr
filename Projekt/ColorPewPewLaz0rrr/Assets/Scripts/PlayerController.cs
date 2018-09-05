@@ -100,6 +100,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     void checkKey() {
+        
+
 
         // Buttons (sowohl Tastatur als auch GamePad
 
