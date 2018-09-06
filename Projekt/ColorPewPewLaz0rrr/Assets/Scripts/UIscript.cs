@@ -84,9 +84,9 @@ public RawImage[] UILifes;
 	void Update () {
 	}
 
-    public void Score(){
+    public void Score(int value){
         ScoreText.text= countScore.ToString();
-        countScore++;
+        countScore += value;
         
     }
 }

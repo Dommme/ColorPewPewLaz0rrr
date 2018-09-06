@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (timer > 0.5f)
         {
 
-            FindObjectOfType<UIscript>().Score();                                   // Score aktualisieren
+            FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
             cooledDown = true;                                                      // Projektil wieder feuerbar machen
             timer = 0;                                                              // Timer resetten
         }

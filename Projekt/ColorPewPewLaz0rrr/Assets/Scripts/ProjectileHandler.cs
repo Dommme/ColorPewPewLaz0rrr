@@ -24,6 +24,7 @@ public class ProjectileHandler : MonoBehaviour {
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                FindObjectOfType<UIscript>().Score(50);
             }
             //ansonsten zerstöre nur das Projektil
             else
