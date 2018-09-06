@@ -21,8 +21,8 @@ public RawImage[] UILifes;
         
         UILifes[0].enabled=false; //0Life
         UILifes[1].enabled=false; //1Life
-        UILifes[2].enabled=true; //2Life TESTWEISE ALS ERSTES True, Normalerweis False
-        UILifes[3].enabled=false;  //3Life TESTWEISE ALS ERSTES False, Normalerweis True
+        UILifes[2].enabled=false; //2Life 
+        UILifes[3].enabled=true;  //3Life 
         
         UIColors[0].enabled=true;  //Non
         UIColors[1].enabled=false; //Blue
