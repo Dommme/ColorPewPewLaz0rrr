@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         shuttle.GetComponent<Renderer>().material.color = new Color(0.3f, 0.7f, 0.1f);
         shuttle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         */
-
         shuttle = Instantiate(shuttlePrefab);
 
         shuttle.transform.Rotate(new Vector3(0, 180, 0));                           // Drehe den Spieler in die richtige Richtung

@@ -10,42 +10,76 @@ public class UIscript : MonoBehaviour {
     
 
 public RawImage[] UIColors;
+public RawImage[] UILifes;
+
     public Text ScoreText;
-    public Text LifeText;
  
     private int countScore = 0;
-    public int countLife = 100;
+    public int countLife = 3;
 	void Start () {
-
-        UIColors[0].enabled=true;  //White
-        UIColors[1].enabled=false; //Red
-        UIColors[2].enabled=false; //Green
-        UIColors[3].enabled=false; //Blue
-        UIColors[4].enabled=false; //Yellow
+        
+        
+        UILifes[0].enabled=false; //0Life
+        UILifes[1].enabled=false; //1Life
+        UILifes[2].enabled=true; //2Life TESTWEISE ALS ERSTES True, Normalerweis False
+        UILifes[3].enabled=false;  //3Life TESTWEISE ALS ERSTES False, Normalerweis True
+        
+        UIColors[0].enabled=true;  //Non
+        UIColors[1].enabled=false; //Blue
+        UIColors[2].enabled=false; //Yellow
+        UIColors[3].enabled=false; //Red
 	}
 	
    public void SelectRed(){
         UIColors[0].enabled=false;
-        UIColors[1].enabled=true; 
-        UIColors[2].enabled=false;
-        UIColors[3].enabled=false;
-        UIColors[4].enabled=false;
-       }
-    public void SelectBlue(){
-        UIColors[0].enabled=false;
         UIColors[1].enabled=false; 
         UIColors[2].enabled=false;
         UIColors[3].enabled=true;
-        UIColors[4].enabled=false;
+       }
+    public void SelectBlue(){
+        UIColors[0].enabled=false;
+        UIColors[1].enabled=true; 
+        UIColors[2].enabled=false;
+        UIColors[3].enabled=false;
     }
      public void SelectYellow(){
         UIColors[0].enabled=false;
         UIColors[1].enabled=false; 
+        UIColors[2].enabled=true;
+        UIColors[3].enabled=false;
+    }
+    public void SelectNone(){
+        UIColors[0].enabled=true;
+        UIColors[1].enabled=false; 
         UIColors[2].enabled=false;
         UIColors[3].enabled=false;
-        UIColors[4].enabled=true;
+       }
+	 public void Life(){
+        countLife--;
+        
+        if(countLife==2){
+            UILifes[0].enabled=false;
+            UILifes[1].enabled=false;
+            UILifes[2].enabled=true;
+            UILifes[3].enabled=false;    
+        }
+        if(countLife==1){
+            UILifes[0].enabled=false;
+            UILifes[1].enabled=true;
+            UILifes[2].enabled=false;
+            UILifes[3].enabled=false;    
+        }
+         if(countLife==0){
+            UILifes[0].enabled=true;
+            UILifes[1].enabled=false;
+            UILifes[2].enabled=false;
+            UILifes[3].enabled=false; 
+            Debug.Log("GameOver!");
+            //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        }
+    
+        
     }
-	
     // Update is called once per frame
 	void Update () {
 	}
@@ -55,17 +89,6 @@ public RawImage[] UIColors;
         countScore++;
         
     }
-
-    public void Life(){
-        LifeText.text= countLife.ToString();
-        countLife--;
-        Debug.Log(countLife + "Leben übrig");
-        if(countLife==0){
-            Debug.Log("GameOver!");
-            //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-            
-            
-        }
-        
-    }
 }
+   
+
