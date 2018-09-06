@@ -109,8 +109,7 @@
     <Compile Include="Assets\Scripts\AsteroidController.cs" />
     <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\GridMover.cs" />
-    <Compile Include="Assets\Scripts\GridSpawner.cs" />
+    <Compile Include="Assets\Scripts\gridSpeedController.cs" />
     <Compile Include="Assets\Scripts\MeteorController.cs" />
     <Compile Include="Assets\Scripts\MeteorSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
