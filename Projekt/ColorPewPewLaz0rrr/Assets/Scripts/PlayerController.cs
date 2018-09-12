@@ -55,6 +55,12 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
             cooledDown = true;                                                      // Projektil wieder feuerbar machen
             timer = 0;                                                              // Timer resetten
+            if (FindObjectOfType<UIscript>().getLife()==0)                          //Neustarten des Spiels mit fire!-Button
+            {
+                FindObjectOfType<UIscript>().Score(-1);
+                                                  
+        }
+
         }
 
         checkKey();                                                                 // Buttons Prüfen
@@ -139,7 +145,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Fire " + color + "!");                                       // fire!-Button
             fire(); 
-            FindObjectOfType<UIscript>().Life();
         }
 
                                                                                     // Die Farbauswahl wird entsprechend geändert, 
