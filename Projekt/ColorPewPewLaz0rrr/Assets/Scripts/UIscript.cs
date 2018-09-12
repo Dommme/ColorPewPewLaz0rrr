@@ -13,12 +13,13 @@ public class UIscript : MonoBehaviour {
 public RawImage[] UIColors;
 public RawImage[] UILifes;
 
-    public Text ScoreText;
+    public TMP_Text ScoreProText;
+
  
     private int countScore = 0;
     public int countLife = 3;
 	void Start () {
-        
+        countScore=0;
         
         UILifes[0].enabled=false; //0Life
         UILifes[1].enabled=false; //1Life
@@ -29,6 +30,8 @@ public RawImage[] UILifes;
         UIColors[1].enabled=false; //Blue
         UIColors[2].enabled=false; //Yellow
         UIColors[3].enabled=false; //Red
+        
+        
 	}
 	
    public void SelectRed(){
@@ -76,9 +79,12 @@ public RawImage[] UILifes;
             UILifes[2].enabled=false;
             UILifes[3].enabled=false; 
             Debug.Log("GameOver!");
-            //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
     
+        
+    }
+    public int getLife(){
+        return countLife;
         
     }
     // Update is called once per frame
@@ -86,8 +92,8 @@ public RawImage[] UILifes;
 	}
 
     public void Score(int value){
-        ScoreText.text= countScore.ToString();
         countScore += value;
+        ScoreProText.text= countScore.ToString();
         
     }
 }
