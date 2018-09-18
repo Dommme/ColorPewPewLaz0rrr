@@ -124,5 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308b87e18c0fbde4fa769cc0e0583fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meteorExplosion: {fileID: 198707121099814310, guid: e479ed5b42f1df348a392343edcbe7bc,
+    type: 2}
   color: red
   velocityFactor: 40
