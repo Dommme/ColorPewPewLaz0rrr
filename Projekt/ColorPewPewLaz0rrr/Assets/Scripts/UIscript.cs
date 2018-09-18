@@ -26,10 +26,10 @@ public RawImage[] UILifes;
         UILifes[1].enabled=false;       //GUI bei einem verbleibendem Leben
         UILifes[2].enabled=false;       //GUI bei zwei verbleibenden Leben
         UILifes[3].enabled=true;        //GUI bei drei verbleibenden Leben, also bei Beginn des Spiels   
-        UIColors[0].enabled=true;       //Keine Farbe des Lasers ausgewählt, Normalzustand bei Beginn des Spiels
+        UIColors[0].enabled=false;       //Keine Farbe des Lasers ausgewählt, Normalzustand bei Beginn des Spiels
         UIColors[1].enabled=false;      //Blauer Laser ausgewählt
         UIColors[2].enabled=false;      //Gelber Laser ausgewählt
-        UIColors[3].enabled=false;      //Roter Laser ausgewählt
+        UIColors[3].enabled=true;      //Roter Laser ausgewählt
         
         
 	}
