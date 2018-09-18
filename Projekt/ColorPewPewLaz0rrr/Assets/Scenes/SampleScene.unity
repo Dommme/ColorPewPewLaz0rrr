@@ -5488,11 +5488,11 @@ MonoBehaviour:
   shuttlePrefab: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c,
     type: 2}
   shuttle: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c, type: 2}
-  blueProjectile: {fileID: 1962884761847804, guid: a487601e3f2a34b46aeac22326aa6ee3,
+  blueProjectile: {fileID: 1889416126790714, guid: b9c1bacc7dfbdd64894d19be0c92c869,
     type: 2}
-  redProjectile: {fileID: 1962884761847804, guid: eca24c794fff0654da904f35a56f1a84,
+  redProjectile: {fileID: 1889416126790714, guid: 43492032466fe1f4ab55ba8ba4399009,
     type: 2}
-  yellowProjectile: {fileID: 1962884761847804, guid: 8b23fab2f42caa64786f829b3f4a11eb,
+  yellowProjectile: {fileID: 1889416126790714, guid: 46fad3e66b9e01d4ca9109e4b8133311,
     type: 2}
 --- !u!4 &1518992231
 Transform:
