@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
-public void playGame(){
+public void playGame(){                          //playGame() wird ausgeführt bei Klick auf "1P" Button
     
-    SceneManager.LoadScene("SampleScene");
+    SceneManager.LoadScene("SampleScene");       //Spiel Szene wird geladen  
     
     
 }
-    public void quitGame(){
+    public void quitGame(){                     //quitGame() wird bei Klick auf Quit ausgeführt und beendet das Spiel
     Debug.Log("Quit Game");
     Application.Quit();
     
