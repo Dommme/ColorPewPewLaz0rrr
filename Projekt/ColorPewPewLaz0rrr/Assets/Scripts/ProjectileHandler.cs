@@ -6,7 +6,7 @@ public class ProjectileHandler : MonoBehaviour {
 
     public ParticleSystem meteorExplosion;
     public string color;
-    //diese Variable ändern, wenn das Projektil die Geschwindigkeit ändern soll
+    //diese Variable ändern, wenn das Projektil ein andere Geschwindigkeit besitzen soll
     public int velocityFactor = 40;
 
     private void OnTriggerEnter(Collider other)
@@ -23,10 +23,13 @@ public class ProjectileHandler : MonoBehaviour {
             //überprüfe die Farbstrings der beiden kollidierenden Objekten und zerstöre sie wenn sie stimmen
             if (other.GetComponent<MeteorController>().color == gameObject.GetComponent<ProjectileHandler>().color)
             {
+                //Fürs Auge
                 Instantiate(meteorExplosion, transform.position, transform.rotation);
-
+                //Die wirkliche Zerstörung
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+
+                //Der Spieler erhält für das Zerstören eines Meteors 50 Punkte
                 FindObjectOfType<UIscript>().Score(50);
             }
             //ansonsten zerstöre nur das Projektil

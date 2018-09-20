@@ -62,8 +62,8 @@ public RawImage[] UILifes;
         UIColors[3].enabled=false;
        }
         //GUI Änderung bei verlieren von Leben
-	 public void Life(){
-        countLife--;                    //Leben wird runtergezählt.
+	 public void Life(int value){
+        countLife += value;                    //Leben wird angepasst.
         
         //GUI Änderung bei verbleibenden 2 Leben
         if(countLife==2){

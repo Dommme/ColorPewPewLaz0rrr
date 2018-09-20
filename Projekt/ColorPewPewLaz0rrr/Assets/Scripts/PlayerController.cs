@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 {
 
     float timer = 0;
+    float cdTimer = 0;
+
     public bool AxisL = false;
     public bool AxisR = false;
     public bool AxisU = false;
@@ -49,11 +51,16 @@ public class PlayerController : MonoBehaviour
                                                                                     // Timer für diverse Zeitversetzte Aktionen
                                                                                     ///////////////////////////////////////////
         timer += Time.deltaTime;
+        cdTimer += Time.deltaTime;
+        if (cdTimer > 0.5f)
+        {
+            cooledDown = true;
+        }
         if (timer > 0.5f)
         {
 
             FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
-            cooledDown = true;                                                      // Projektil wieder feuerbar machen
+            //cooledDown = true;                                                      // Projektil wieder feuerbar machen
             timer = 0;                                                              // Timer resetten
             if (FindObjectOfType<UIscript>().getLife()==0)                          //Neustarten des Spiels mit fire!-Button
             {
@@ -143,7 +150,7 @@ public class PlayerController : MonoBehaviour
                                                                                     ////////////////////////////////////////////
         if (Input.GetButton("GreenButton") && cooledDown == true)
         {
-            Debug.Log("Fire " + color + "!");                                       // fire!-Button
+            //Debug.Log("Fire " + color + "!");                                       // fire!-Button
             fire(); 
         }
 
@@ -282,5 +289,6 @@ public class PlayerController : MonoBehaviour
             * lazor.GetComponent<ProjectileHandler>().velocityFactor;               // sich auch über das Unity Interface direkt steuern. Die Variable heißt "velocityFactor"
 
         cooledDown = false;
+        cdTimer = 0;
     }
 }
