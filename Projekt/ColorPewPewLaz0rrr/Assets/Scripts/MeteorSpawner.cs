@@ -9,9 +9,10 @@ public class MeteorSpawner : MonoBehaviour
     public GameObject meteorYellow;
 
     public Vector3 spawnValues;
-    public float spawnDelay;
+    public float spawnDelay = 1;
     public float startDelay;
     public bool useGrid = true;
+    public float meteorSpeed = 10;
 
     void Start()
     {

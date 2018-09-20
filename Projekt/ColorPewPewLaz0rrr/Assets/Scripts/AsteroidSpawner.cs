@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public GameObject asteroid; // von Dome
+    public GameObject asteroid;
     public Vector3 spawnValues;
-    public float spawnDelay;
-    public int asteroidenDichte = 15; // von Dome
+    public float spawnDelay = 1;
+    public int asteroidenDichte = 25;
+    public float asteroidSpeed = 10;
 
     void Start()
     {

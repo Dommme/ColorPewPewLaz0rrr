@@ -13,7 +13,7 @@ public class MeteorController : MonoBehaviour {
         Rigidbody rb = GetComponent<Rigidbody>();
 
         //Vorwärtsbewegung
-        rb.velocity = new Vector3(0.0f, 0.0f, speed);
+        rb.velocity = new Vector3(0.0f, 0.0f, FindObjectOfType<MeteorSpawner>().meteorSpeed);
 
         //Zufällige Drehung der Meteore
         rb.angularVelocity = Random.insideUnitSphere * tumble;

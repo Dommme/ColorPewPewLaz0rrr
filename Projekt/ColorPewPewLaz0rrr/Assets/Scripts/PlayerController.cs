@@ -76,6 +76,10 @@ public class PlayerController : MonoBehaviour
 
         playerPos = shuttle.transform.position;                                     // PlayPos Aktualisieren für Übergabe an Kamera
 
+        if (Input.GetKeyDown("r"))                                                  // Neustarten / ins MainMenu wechseln
+        {
+            SceneManager.LoadScene("Menu");
+        }
 
     }
 

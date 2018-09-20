@@ -13,7 +13,7 @@ public class AsteroidController : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
 
         //Vorwärtsbewegung
-        rb.velocity = new Vector3(0.0f, 0.0f, speed);
+        rb.velocity = new Vector3(0.0f, 0.0f, FindObjectOfType<AsteroidSpawner>().asteroidSpeed);
 
         //Zufällige Drehung der Meteore
         rb.angularVelocity = Random.insideUnitSphere * tumble;

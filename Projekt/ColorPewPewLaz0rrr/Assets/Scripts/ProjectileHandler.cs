@@ -23,15 +23,24 @@ public class ProjectileHandler : MonoBehaviour {
             //überprüfe die Farbstrings der beiden kollidierenden Objekten und zerstöre sie wenn sie stimmen
             if (other.GetComponent<MeteorController>().color == gameObject.GetComponent<ProjectileHandler>().color)
             {
-                //Fürs Auge
+                // Partikelsystem
                 Instantiate(meteorExplosion, transform.position, transform.rotation);
-                //Die wirkliche Zerstörung
+                
+                // Die Zerstörung von Meteor und Projektil
                 Destroy(other.gameObject);
                 Destroy(gameObject);
 
-                //Der Spieler erhält für das Zerstören eines Meteors 50 Punkte
+                // Der Spieler erhält für das Zerstören eines Meteors 50 Punkte
                 FindObjectOfType<UIscript>().Score(50);
+
+                // Alles Beschleunigen
+                FindObjectOfType<MeteorSpawner>().spawnDelay *= 0.98f;          // Meteoriten Spawn
+                FindObjectOfType<MeteorSpawner>().meteorSpeed *= 1.02f;         // Meteor Speed
+                FindObjectOfType<AsteroidSpawner>().spawnDelay *= 0.98f;        // Asteroiden Spawn
+                FindObjectOfType<AsteroidSpawner>().asteroidSpeed *= 1.02f;     // Asteroiden Speed
+                FindObjectOfType<Animator>().speed *= 1.01f;                    // Grid Speed
             }
+
             //ansonsten zerstöre nur das Projektil
             else
             {
