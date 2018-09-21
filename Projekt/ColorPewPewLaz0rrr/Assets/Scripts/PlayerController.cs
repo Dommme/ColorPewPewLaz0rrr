@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     float timer = 0;
     float cdTimer = 0;
+    float unbesiegbarTimer = 0;
 
     public bool AxisL = false;
     public bool AxisR = false;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 playerPos;
 
     public bool cooledDown = false;
+    public bool unbesiegbar;
 
     public GameObject shuttlePrefab;
     public GameObject shuttle;
@@ -52,6 +54,18 @@ public class PlayerController : MonoBehaviour
                                                                                     ///////////////////////////////////////////
         timer += Time.deltaTime;
         cdTimer += Time.deltaTime;
+
+        //Dieser Timer wird von der Kollision mit einem Unbesiegbarkeitsupgrade ausgelöst
+        if (unbesiegbar)
+        {
+            unbesiegbarTimer += Time.deltaTime;
+            //Die Obergrenze ist in PlayerCollisionHandling änderbar
+            if (unbesiegbarTimer > FindObjectOfType<PlayerCollisionHandling>().unbesiegbarGrenze)
+            {
+                unbesiegbar = false;
+                unbesiegbarTimer = 0f;
+            }
+        }
 
         if (cdTimer > 0.5f)
         {

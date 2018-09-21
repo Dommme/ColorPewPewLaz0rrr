@@ -40,11 +40,17 @@ public class ProjectileHandler : MonoBehaviour {
                 FindObjectOfType<AsteroidSpawner>().asteroidSpeed *= 1.02f;     // Asteroiden Speed
                 FindObjectOfType<Animator>().speed *= 1.01f;                    // Grid Speed
             }
-
             //ansonsten zerstöre nur das Projektil
             else
             {
-                Destroy(gameObject);
+                if (other.GetComponent<MeteorController>().color == "")
+                {
+
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

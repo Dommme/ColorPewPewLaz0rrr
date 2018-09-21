@@ -19,6 +19,7 @@ public RawImage[] UILifes;
     private int countScore = 0;         //Anfangsscore bei Beginn des Spiels
     public int countLife = 3;           //Anzahl an Leben. Hier an GUI angepasst
 	void Start () {
+        
         countScore=0;
         
             //Anfangszustand GUI
@@ -64,9 +65,20 @@ public RawImage[] UILifes;
         //GUI Änderung bei verlieren von Leben
 	 public void Life(int value){
         countLife += value;                    //Leben wird angepasst.
-        
+        if (countLife >= 4)
+        {
+            countLife = 3;
+        }
+        //GUI Änderungen bei 2 verbleibenden Leben
+        if (countLife == 3)
+        {
+            UILifes[0].enabled = false;
+            UILifes[1].enabled = false;
+            UILifes[2].enabled = false;
+            UILifes[3].enabled = true;
+        }
         //GUI Änderung bei verbleibenden 2 Leben
-        if(countLife==2){
+        if (countLife==2){
             UILifes[0].enabled=false;
             UILifes[1].enabled=false;
             UILifes[2].enabled=true;
@@ -84,7 +96,8 @@ public RawImage[] UILifes;
             UILifes[0].enabled=true;
             UILifes[1].enabled=false;
             UILifes[2].enabled=false;
-            UILifes[3].enabled=false; 
+            UILifes[3].enabled=false;
+            //Destroy(GameObject.Find("Shuttle(Clone)"));
             Debug.Log("GameOver!");
         }
     
