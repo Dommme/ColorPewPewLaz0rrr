@@ -6160,11 +6160,14 @@ MonoBehaviour:
   meteorRed: {fileID: 1224569698217202, guid: 1f890249d1d13d843a4433204dd190d7, type: 2}
   meteorYellow: {fileID: 1224569698217202, guid: 7779a0f0815abb94396d7b4c34eda7d5,
     type: 2}
+  powerUp1: {fileID: 1815567562877360, guid: d5017bdf129ad5240bd1cb44e272ecd2, type: 2}
+  powerUp2: {fileID: 1815567562877360, guid: 8c81f044370ec4740b0af18275ebcfe5, type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 1
   startDelay: 2
   useGrid: 1
   meteorSpeed: 10
+  powerUpChance: 50
 --- !u!1 &1833053759
 GameObject:
   m_ObjectHideFlags: 0

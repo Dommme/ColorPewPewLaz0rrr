@@ -19,10 +19,14 @@ public class PlayerCollisionHandling : MonoBehaviour
             switch (other.gameObject.name)
             {
                 //Im Falle eines Health Power-Ups bekommt er ein Leben zurück.
-                case "Healthcube(Clone)":
+                case "HealthPowerUp(Clone)":
                     FindObjectOfType<UIscript>().Life(+1);
                     break;
 
+                //Im Falle eines Invincibility Power-Ups nimmt er für gewisse Zeit keinen Schaden
+                case "InvincibilityPowerUp(Clone)":
+                    //invincibility
+                    break;
                 default:
                     break;
             }

@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeteorController : MonoBehaviour {
-
-    public float speed;
-    public float tumble;
     public string color;
-
+    public float tumble;
 
     void Start () {
         Rigidbody rb = GetComponent<Rigidbody>();
