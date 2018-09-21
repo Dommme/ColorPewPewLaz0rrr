@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<UIscript>().SelectYellow();
         }
         
-        if (Input.GetButton("GreenButton") && FindObjectOfType<UIscript>().getLife() >= 0)                   //Neustarten des Spiels mit fire!-Button
+        if (Input.GetButton("GreenButton") && FindObjectOfType<UIscript>().getLife() <= 0)                   //Neustarten des Spiels mit fire!-Button
         {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);                                   //Scene Manager Lädt erneut die Spiel Szene

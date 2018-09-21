@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198707121099814310}
   - component: {fileID: 199308694148971616}
   - component: {fileID: 82342485251100154}
+  - component: {fileID: 114005450784161302}
   m_Layer: 0
   m_Name: PlasmaExplosionBlue
   m_TagString: Untagged
@@ -261,6 +262,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114005450784161302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012722174315460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e494877a9574ad1418c8e0f6f10a6a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198181280907944440
 ParticleSystem:
   m_ObjectHideFlags: 1
