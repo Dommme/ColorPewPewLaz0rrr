@@ -34,7 +34,7 @@ public class AsteroidSpawner : MonoBehaviour
             // Umgebungs Asteroide spawnen
             for (int i = 0; i < asteroidenDichte; i++)
             {   
-                asteroidPos = new Vector3(Random.Range(-spawnValues.x * 6, spawnValues.x * 6), Random.Range(-spawnValues.y * 4, spawnValues.y * 4), spawnValues.z);
+                asteroidPos = new Vector3(Random.Range(-spawnValues.x * 9, spawnValues.x * 9), Random.Range(-spawnValues.y * 6, spawnValues.y * 6), spawnValues.z);
 
                 if((System.Math.Abs(asteroidPos.x) + System.Math.Abs(asteroidPos.y)) < 2)
                 {

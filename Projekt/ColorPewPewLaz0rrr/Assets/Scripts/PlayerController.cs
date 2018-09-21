@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject shuttlePrefab;
     public GameObject shuttle;
+    public GameObject shieldPrefab;
+    public GameObject shield;
 
     public GameObject blueProjectile;
     public GameObject redProjectile;
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
         shuttle.transform.Rotate(new Vector3(0, 180, 0));                           // Drehe den Spieler in die richtige Richtung
 
+        shield = Instantiate(shieldPrefab);                                         // Shield erstellen und Scalieren
+        shield.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
     }
 
                                                                                     // Update is called once per frame
@@ -55,40 +59,21 @@ public class PlayerController : MonoBehaviour
         timer += Time.deltaTime;
         cdTimer += Time.deltaTime;
 
-        //Dieser Timer wird von der Kollision mit einem Unbesiegbarkeitsupgrade ausgelöst
-        if (unbesiegbar)
-        {
-            unbesiegbarTimer += Time.deltaTime;
-            //Die Obergrenze ist in PlayerCollisionHandling änderbar
-            if (unbesiegbarTimer > FindObjectOfType<PlayerCollisionHandling>().unbesiegbarGrenze)
-            {
-                unbesiegbar = false;
-                unbesiegbarTimer = 0f;
-            }
-        }
 
-        if (cdTimer > 0.5f)
-        {
-            cooledDown = true;                                                      //Projektil wieder feuerbar machen
-        }
-        if (timer > 0.5f)
-        {
 
-            FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
-            timer = 0;                                                              // Timer resetten
-            if (FindObjectOfType<UIscript>().getLife()==0)                          //Neustarten des Spiels mit fire!-Button
-            {
-                FindObjectOfType<UIscript>().Score(-1);
-                                                  
-        }
+        checkInvinc();                                                              // Unverwundbarkeits Prüfung
 
-        }
+        checkCD();                                                                  // Dauerfeuer vermeiden mit Cooldown prüfung
+
+        updateScore();                                                              // Zeitbasiert Punkte vergeben
 
         checkKey();                                                                 // Buttons Prüfen
 
         checkAxis();                                                                // Analog-Stick Prüfen
 
         playerPos = shuttle.transform.position;                                     // PlayPos Aktualisieren für Übergabe an Kamera
+
+        shield.transform.position = playerPos;                                      // Shield am Player festkleben
 
         if (Input.GetKeyDown("r"))                                                  // Neustarten / ins MainMenu wechseln
         {
@@ -97,6 +82,46 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void checkInvinc()
+    {
+        //Dieser Timer wird von der Kollision mit einem Unbesiegbarkeitsupgrade ausgelöst
+        if (unbesiegbar)
+        {
+            shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            unbesiegbarTimer += Time.deltaTime;
+            //Die Obergrenze ist in PlayerCollisionHandling änderbar
+            if (unbesiegbarTimer > FindObjectOfType<PlayerCollisionHandling>().unbesiegbarGrenze)
+            {
+                unbesiegbar = false;
+                unbesiegbarTimer = 0f;
+                shield.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+            }
+        }
+    }
+
+    void checkCD()
+    {
+        if (cdTimer > 0.5f)
+        {
+            cooledDown = true;                                                      //Projektil wieder feuerbar machen
+        }
+    }
+
+    void updateScore()
+    {
+        if (timer > 0.5f)
+        {
+
+            FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
+            timer = 0;                                                              // Timer resetten
+            if (FindObjectOfType<UIscript>().getLife() == 0)                          //Neustarten des Spiels mit fire!-Button
+            {
+                FindObjectOfType<UIscript>().Score(-1);
+
+            }
+
+        }
+    }
 
     void checkAxis()
     {
@@ -156,7 +181,6 @@ public class PlayerController : MonoBehaviour
         {
             movePlayer("L");
         }
-
 
 
     }
@@ -261,7 +285,11 @@ public class PlayerController : MonoBehaviour
 
             default:
                 break;
+
+                
         }
+
+        
 
     }
 

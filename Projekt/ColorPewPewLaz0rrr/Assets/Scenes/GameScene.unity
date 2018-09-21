@@ -5582,9 +5582,13 @@ MonoBehaviour:
   moveSmoothVar: 5
   playerPos: {x: 0, y: 0, z: 0}
   cooledDown: 0
+  unbesiegbar: 0
   shuttlePrefab: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c,
     type: 2}
   shuttle: {fileID: 1605096639353820, guid: 2cf4b8e26a59d5640896d2cb15f2c54c, type: 2}
+  shieldPrefab: {fileID: 1530719334797774, guid: 9108af1e2d97c964187e24800b878c5c,
+    type: 2}
+  shield: {fileID: 1530719334797774, guid: 9108af1e2d97c964187e24800b878c5c, type: 2}
   blueProjectile: {fileID: 1889416126790714, guid: b9c1bacc7dfbdd64894d19be0c92c869,
     type: 2}
   redProjectile: {fileID: 1889416126790714, guid: 43492032466fe1f4ab55ba8ba4399009,
@@ -6118,7 +6122,7 @@ MonoBehaviour:
   asteroid: {fileID: 1401621254580536, guid: 10bd8a0591bef9747b5264e939c0f2ef, type: 2}
   spawnValues: {x: 1, y: 1, z: -35}
   spawnDelay: 0.02
-  asteroidenDichte: 1
+  asteroidenDichte: 10
   asteroidSpeed: 10
 --- !u!65 &1816723147
 BoxCollider:
@@ -6167,7 +6171,7 @@ MonoBehaviour:
   startDelay: 2
   useGrid: 1
   meteorSpeed: 10
-  powerUpChance: 50
+  powerUpChance: 40
 --- !u!1 &1833053759
 GameObject:
   m_ObjectHideFlags: 0
