@@ -7,7 +7,7 @@ public class MeteorController : MonoBehaviour {
     public float speed;
     public float tumble;
     public string color;
-    public bool istHindernis = true;
+
 
     void Start () {
         Rigidbody rb = GetComponent<Rigidbody>();

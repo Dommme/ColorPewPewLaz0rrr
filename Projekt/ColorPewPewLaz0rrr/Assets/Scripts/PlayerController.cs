@@ -52,15 +52,15 @@ public class PlayerController : MonoBehaviour
                                                                                     ///////////////////////////////////////////
         timer += Time.deltaTime;
         cdTimer += Time.deltaTime;
+
         if (cdTimer > 0.5f)
         {
-            cooledDown = true;
+            cooledDown = true;                                                      //Projektil wieder feuerbar machen
         }
         if (timer > 0.5f)
         {
 
             FindObjectOfType<UIscript>().Score(1);                                   // Score aktualisieren
-            //cooledDown = true;                                                      // Projektil wieder feuerbar machen
             timer = 0;                                                              // Timer resetten
             if (FindObjectOfType<UIscript>().getLife()==0)                          //Neustarten des Spiels mit fire!-Button
             {
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<UIscript>().SelectYellow();
         }
         
-        if (Input.GetButton("GreenButton") && FindObjectOfType<UIscript>().getLife()==-1)                   //Neustarten des Spiels mit fire!-Button
+        if (Input.GetButton("GreenButton") && FindObjectOfType<UIscript>().getLife() >= 0)                   //Neustarten des Spiels mit fire!-Button
         {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);                                   //Scene Manager Lädt erneut die Spiel Szene
