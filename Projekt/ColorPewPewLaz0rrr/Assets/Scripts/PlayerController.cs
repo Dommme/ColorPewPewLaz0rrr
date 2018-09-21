@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     float timer = 0;
     float cdTimer = 0;
+    float blinkTimer = 0;
     float unbesiegbarTimer = 0;
 
     public bool AxisL = false;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public bool cooledDown = false;
     public bool unbesiegbar;
+    public float unbesiegbarGrenze = 5f;
 
     public GameObject shuttlePrefab;
     public GameObject shuttle;
@@ -47,7 +49,8 @@ public class PlayerController : MonoBehaviour
         shuttle.transform.Rotate(new Vector3(0, 180, 0));                           // Drehe den Spieler in die richtige Richtung
 
         shield = Instantiate(shieldPrefab);                                         // Shield erstellen und Scalieren
-        shield.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        shield.GetComponent<MeshRenderer>().enabled = false;
     }
 
                                                                                     // Update is called once per frame
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviour
                                                                                     ///////////////////////////////////////////
         timer += Time.deltaTime;
         cdTimer += Time.deltaTime;
+        blinkTimer += Time.deltaTime;
 
 
 
@@ -82,19 +86,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
     void checkInvinc()
     {
         //Dieser Timer wird von der Kollision mit einem Unbesiegbarkeitsupgrade ausgelöst
         if (unbesiegbar)
         {
-            shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
             unbesiegbarTimer += Time.deltaTime;
+            shield.GetComponent<MeshRenderer>().enabled = true;
+
+            shield.transform.localScale *= 0.995f;
+            
+
             //Die Obergrenze ist in PlayerCollisionHandling änderbar
-            if (unbesiegbarTimer > FindObjectOfType<PlayerCollisionHandling>().unbesiegbarGrenze)
+            if (unbesiegbarTimer > unbesiegbarGrenze)
             {
                 unbesiegbar = false;
                 unbesiegbarTimer = 0f;
-                shield.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+                shield.GetComponent<MeshRenderer>().enabled = false;
+
             }
         }
     }

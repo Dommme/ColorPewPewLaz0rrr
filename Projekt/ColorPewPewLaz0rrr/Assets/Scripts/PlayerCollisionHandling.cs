@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerCollisionHandling : MonoBehaviour
 {
-    //Diese Variable gibt in Sekunden an, wie lange das Unbesiegbarkeits Power-Up hält. Hier ändern
-    public float unbesiegbarGrenze = 5f;
+
 
     // Kollisionshandling für den Spieler
     private void OnTriggerEnter(Collider other) {
@@ -37,6 +36,7 @@ public class PlayerCollisionHandling : MonoBehaviour
                 //Im Falle eines Invincibility Power-Ups nimmt er für gewisse Zeit keinen Schaden
                 case "InvincibilityPowerUp(Clone)":
                     FindObjectOfType<PlayerController>().unbesiegbar = true;
+                    FindObjectOfType<PlayerController>().shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                     Destroy(other.gameObject);
                     break;
 
