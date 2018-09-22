@@ -215,6 +215,7 @@ public class PlayerController : MonoBehaviour
             color = "red";
             Debug.Log("Red");
             FindObjectOfType<UIscript>().SelectRed();
+            FindObjectOfType<AfterBurnerController>().changeColor("red");
         }
 
         if (Input.GetButton("BlueButton"))
@@ -222,6 +223,7 @@ public class PlayerController : MonoBehaviour
             color = "blue";
             Debug.Log("Blue");
             FindObjectOfType<UIscript>().SelectBlue();
+            FindObjectOfType<AfterBurnerController>().changeColor("blue");
         }
 
         if (Input.GetButton("YellowButton"))
@@ -229,6 +231,7 @@ public class PlayerController : MonoBehaviour
             color = "yellow";
             Debug.Log("Yellow");
             FindObjectOfType<UIscript>().SelectYellow();
+            FindObjectOfType<AfterBurnerController>().changeColor("yellow");
         }
         
         if (Input.GetButton("GreenButton") && FindObjectOfType<UIscript>().getLife() <= 0)                   //Neustarten des Spiels mit fire!-Button
