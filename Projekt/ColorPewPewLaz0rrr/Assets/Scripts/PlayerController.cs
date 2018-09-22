@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         shuttle.transform.Rotate(new Vector3(0, 180, 0));                           // Drehe den Spieler in die richtige Richtung
 
-        shield = Instantiate(shieldPrefab);                                         // Shield erstellen und Scalieren
+        shield = Instantiate(shieldPrefab);                                         // Shield erstellen und Skalieren
         shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         shield.GetComponent<MeshRenderer>().enabled = false;
     }

@@ -15,6 +15,7 @@ public class PlayerCollisionHandling : MonoBehaviour
             //Wenn ja, dann erleidet er schaden
             if (FindObjectOfType<PlayerController>().unbesiegbar)
             {
+                Instantiate(damagePS, transform.position, transform.rotation);
                 Destroy(other.gameObject);
             }
             else
