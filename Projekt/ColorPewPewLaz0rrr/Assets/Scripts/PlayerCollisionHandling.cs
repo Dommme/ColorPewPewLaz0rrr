@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerCollisionHandling : MonoBehaviour
 {
-
+    public ParticleSystem deathPS;
+    public ParticleSystem damagePS;
 
     // Kollisionshandling für den Spieler
     private void OnTriggerEnter(Collider other) {
@@ -19,6 +20,7 @@ public class PlayerCollisionHandling : MonoBehaviour
             else
             {
                 FindObjectOfType<UIscript>().Life(-1);
+                Instantiate(damagePS, transform.position, transform.rotation);
                 Destroy(other.gameObject);
             }
         }
@@ -29,20 +31,31 @@ public class PlayerCollisionHandling : MonoBehaviour
             {
                 //Im Falle eines Health Power-Ups bekommt er ein Leben zurück.
                 case "HealthPowerUp(Clone)":
-                        FindObjectOfType<UIscript>().Life(1);
-                        Destroy(other.gameObject);
+                    FindObjectOfType<UIscript>().Life(1);
+                    other.gameObject.GetComponent<PowerUpController>().playSoundAndDestroy();
                     break;
 
                 //Im Falle eines Invincibility Power-Ups nimmt er für gewisse Zeit keinen Schaden
                 case "InvincibilityPowerUp(Clone)":
                     FindObjectOfType<PlayerController>().unbesiegbar = true;
                     FindObjectOfType<PlayerController>().shield.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                    Destroy(other.gameObject);
+                    other.gameObject.GetComponent<PowerUpController>().playSoundAndDestroy();
                     break;
 
                 default:
                     break;
             }
         }
+    }
+
+    // zerstört sich selbst
+    public void selfDestruct()
+    {
+        //macht das Objekt unsichtbar
+        GetComponent<MeshRenderer>().enabled = false;
+
+        //Instantiiert Explosion-PS
+        Instantiate(deathPS, transform.position, transform.rotation);
+
     }
 }

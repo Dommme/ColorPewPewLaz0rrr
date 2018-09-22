@@ -97,7 +97,7 @@ public RawImage[] UILifes;
             UILifes[1].enabled=false;
             UILifes[2].enabled=false;
             UILifes[3].enabled=false;
-            //Destroy(GameObject.Find("Shuttle(Clone)"));
+            GameObject.Find("Shuttle(Clone)").GetComponent<PlayerCollisionHandling>().selfDestruct();
             Debug.Log("GameOver!");
         }
     
@@ -113,7 +113,11 @@ public RawImage[] UILifes;
 	}
         //Score Erhöhung wird pro frame ausgeführt und in GameState Handler überführt
     public void Score(int value){
-        countScore += value;
+        if (getLife() > 0)
+        {
+            countScore += value;
+        }
+
         ScoreProText.text= countScore.ToString();
         
     }
