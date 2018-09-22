@@ -1661,7 +1661,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.9622642, g: 0, b: 0.063272655, a: 0.9529412}
+        key0: {r: 0, g: 0.9607843, b: 0.27134395, a: 0.9529412}
         key1: {r: 0.50980395, g: 0.8156863, b: 1, a: 0}
         key2: {r: 0.95686275, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -10545,8 +10545,8 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 0.26666665, g: 0.99215686, b: 0.26734245, a: 0.77254903}
-        key2: {r: 0.2757276, g: 0.26254895, b: 0.9433962, a: 0}
-        key3: {r: 0.027450979, g: 0.046885926, b: 0.85882354, a: 0}
+        key2: {r: 0.48083633, g: 0.94509804, b: 0.26274514, a: 0}
+        key3: {r: 0.04962109, g: 0.85882354, b: 0.027450979, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -18543,7 +18543,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 766068e65acc92645979c789a6dd7e42, type: 2}
+  - {fileID: 2100000, guid: c730335cca6ac404fa6d5f5dbade565a, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

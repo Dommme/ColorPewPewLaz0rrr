@@ -51,6 +51,9 @@ public class PlayerCollisionHandling : MonoBehaviour
     // zerstört sich selbst
     public void selfDestruct()
     {
+        //deaktiviert collider, damit keine Objekte mehr getroffen werden
+        GetComponent<SphereCollider>().enabled = false;
+
         //macht das Objekt unsichtbar
         GetComponent<MeshRenderer>().enabled = false;
 

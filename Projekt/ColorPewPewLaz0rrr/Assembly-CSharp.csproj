@@ -120,6 +120,8 @@
     <Compile Include="Assets\Scripts\PowerUpController.cs" />
     <Compile Include="Assets\Scripts\ProjectileHandler.cs" />
     <Compile Include="Assets\Scripts\SetVolume.cs" />
+    <Compile Include="Assets\Scripts\StarGeneration.cs" />
+    <Compile Include="Assets\Scripts\starShift.cs" />
     <Compile Include="Assets\Scripts\UIscript.cs" />
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

@@ -179,6 +179,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 40.76, y: 0, z: 0}
+--- !u!1 &231841870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 231841872}
+  - component: {fileID: 231841871}
+  m_Layer: 0
+  m_Name: Starfield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &231841871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 231841870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e883bef1032e2e44ca8e0c60fdba8973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  star: {fileID: 1068881308649834, guid: 805a9d730803e104f96619acab5e2e18, type: 2}
+  distance: -500
+  height: 10
+  width: 10
+--- !u!4 &231841872
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 231841870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,7 +6086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f19ee1e67a4285443b80d7c20a2f446a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -559.6
+      value: -499
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f19ee1e67a4285443b80d7c20a2f446a, type: 3}
       propertyPath: m_LocalRotation.x
