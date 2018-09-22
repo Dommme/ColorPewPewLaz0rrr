@@ -17,9 +17,11 @@ public class PlayerCollisionHandling : MonoBehaviour
             {
                 Instantiate(damagePS, transform.position, transform.rotation);
                 Destroy(other.gameObject);
+                FindObjectOfType<UIscript>().Score(50);
             }
             else
             {
+                FindObjectOfType<UIscript>().Score(50);
                 FindObjectOfType<UIscript>().Life(-1);
                 Instantiate(damagePS, transform.position, transform.rotation);
                 Destroy(other.gameObject);

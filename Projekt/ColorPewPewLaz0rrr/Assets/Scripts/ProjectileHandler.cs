@@ -34,11 +34,11 @@ public class ProjectileHandler : MonoBehaviour {
                 FindObjectOfType<UIscript>().Score(50);
 
                 // Alles Beschleunigen
-                FindObjectOfType<MeteorSpawner>().spawnDelay *= 0.98f;          // Meteoriten Spawn
-                FindObjectOfType<MeteorSpawner>().meteorSpeed *= 1.02f;         // Meteor Speed
-                FindObjectOfType<AsteroidSpawner>().spawnDelay *= 0.98f;        // Asteroiden Spawn
-                FindObjectOfType<AsteroidSpawner>().asteroidSpeed *= 1.02f;     // Asteroiden Speed
-                FindObjectOfType<Animator>().speed *= 1.01f;                    // Grid Speed
+                FindObjectOfType<MeteorSpawner>().spawnDelay *= 0.96f;              // Meteoriten Spawn
+                FindObjectOfType<MeteorSpawner>().meteorSpeed *= 1.04f;             // Meteor Speed
+                FindObjectOfType<AsteroidSpawner>().spawnDelay *= 0.96f;            // Asteroiden Spawn
+                FindObjectOfType<AsteroidSpawner>().asteroidSpeed *= 1.04f;         // Asteroiden Speed
+                FindObjectOfType<Animator>().speed *= 1.02f;                       // Grid Speed
             }
             else
             {
